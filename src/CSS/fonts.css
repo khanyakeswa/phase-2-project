@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: 'Draconis';
+    src: url('../Assets/Fonts/Draconis.woff2') format('woff2'),
+        url('../Assets/Fonts/Draconis.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
