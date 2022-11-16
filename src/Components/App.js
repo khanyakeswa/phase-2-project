@@ -24,7 +24,7 @@ function App() {
   return (
     <div id='window' className={currentHeader} key={location.pathname}>
       <header id='current-screen-header' className={currentHeader === '' ? 'hidden' : 'visible'}>
-        <TextTransition springConfig={presets.wobbly}>
+        <TextTransition springConfig={presets.gentle} style={{justifyContent: 'center'}}>
           <span>{currentHeader}</span>
         </TextTransition>
         {/* <svg
