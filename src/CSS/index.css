@@ -50,8 +50,22 @@ button {
 }
 
 #starter-screen > p {
+  opacity: 1;
   color: rgba(255, 255, 255, 1);
   font-size: 2em;
+  animation: 2s ease 0s infinite blink;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #starter-screen > img {
@@ -62,16 +76,18 @@ button {
 #current-screen-header {
   text-align: center;
   user-select: none;
+  pointer-events: none;
   position: absolute;
   font-family: 'Draconis';
   color: rgb(255, 191, 0);
-  width: 100px;
+  width: 275px;
   height: auto;
   font-size: 2em;
   padding-bottom: 625px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #current-screen-header svg {
@@ -90,10 +106,9 @@ button {
   transform: translateX(0vw);
   width: 75vw;
   height: 500px;
-  background-color: rgba(255, 255, 255, .75);
+  background-color: rgba(255, 255, 255, 0.75);
   transition: transform 0.25s;
 }
-
 
 #member-selection > button {
   font-family: 'Draconis';
