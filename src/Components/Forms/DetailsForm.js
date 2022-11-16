@@ -1,7 +1,12 @@
-import React from 'react';
+import React from 'react'
+import AvatarCarousel from '../AvatarCarousel'
 
 function DetailsForm() {
-    return (<div></div>)
+  return (
+    <div>
+      <AvatarCarousel />
+    </div>
+  )
 }
 
 export default DetailsForm

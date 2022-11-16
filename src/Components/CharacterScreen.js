@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NewCharacterForm from './NewCharacterForm'
 import PickCharacter from './PickCharacter'
 import MemberSelection from './MemberSelection'
 
-function CharacterScreen() {
+function CharacterScreen({currentScreen}) {
+  const [currentCharacterScreenDisplay, setCurrentCharacterScreenDisplay] =
+    useState('member-selection')
+
+  // function transitionSlides() {
+
+  // }
+
   return (
     <div id='character-screen'>
-      <MemberSelection />
+      <MemberSelection
+        setCurrentCharacterScreenDisplay={setCurrentCharacterScreenDisplay}
+      />
       <NewCharacterForm />
       <PickCharacter />
     </div>
