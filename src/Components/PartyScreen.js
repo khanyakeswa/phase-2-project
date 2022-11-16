@@ -1,7 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion'
 
 function PartyScreen() {
-    return (<div></div>)
+    return (<motion.div></motion.div>)
 }
 
 export default PartyScreen

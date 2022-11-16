@@ -2,23 +2,25 @@ import React, { useState } from 'react'
 import NewCharacterForm from './NewCharacterForm'
 import PickCharacter from './PickCharacter'
 import MemberSelection from './MemberSelection'
+import { motion } from 'framer-motion'
 
-function CharacterScreen({currentScreen}) {
+function CharacterScreen({ currentScreen }) {
   const [currentCharacterScreenDisplay, setCurrentCharacterScreenDisplay] =
     useState('member-selection')
 
-  // function transitionSlides() {
-
-  // }
-
   return (
-    <div id='character-screen'>
+    <motion.div
+      id='character-screen'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <MemberSelection
         setCurrentCharacterScreenDisplay={setCurrentCharacterScreenDisplay}
       />
       <NewCharacterForm />
       <PickCharacter />
-    </div>
+    </motion.div>
   )
 }
 

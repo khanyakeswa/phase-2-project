@@ -1,24 +1,19 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
 function MemberSelection({setCurrentCharacterScreenDisplay}) {
+    const navigate = useNavigate
+
     const [visibiltyPhase, setVisibility] = useState('')
 
-    function newCharacterClickHandler(e) {
-        setVisibility('post')
-        setCurrentCharacterScreenDisplay()
-        console.log(e.target.parentNode.id)
-    }
-
-    function chooseCharacterClickHandler(e) {
-        setVisibility('post')
-        setCurrentCharacterScreenDisplay()
-        console.log(e.target.parentNode.id)
-    }
+    // function newCharacterClickHandler() {
+    //     navigate
+    // }
 
     return (
         <div id="member-selection" className={`ui-container ${visibiltyPhase}`}>
-            <button onClick={newCharacterClickHandler}>create new adventurer</button>
-            <button onClick={chooseCharacterClickHandler}>recruit adventurer</button>
+            <button onClick={navigate('/character/create')}>create new adventurer</button>
+            <button onClick={navigate('/character/pick')}>recruit adventurer</button>
         </div>
     )
 }
