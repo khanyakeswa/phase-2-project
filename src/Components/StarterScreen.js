@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import titleImage from '../Assets/Images/dnd-vector.svg'
 import { motion } from 'framer-motion'
 
-function StarterScreen({ currentScreen, setScreen }) {
+function StarterScreen({ setHeader }) {
   const navigate = useNavigate()
 
   function handleStartClick() {
-    // setScreen('/character')
-    console.log(currentScreen)
-    navigate('/character')
+    navigate('/character/selection')
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHeader('')
+    }, 1)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <motion.div
