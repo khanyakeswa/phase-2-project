@@ -5,6 +5,10 @@ body {
   cursor: url(../Assets/Images/pixel_cursor.png), auto;
 }
 
+button {
+  cursor: url(../Assets/Images/pixel_pointer.png), auto;
+}
+
 #window {
   width: 100%;
   height: 100vh;
@@ -20,17 +24,16 @@ body {
 }
 
 #character-screen {
-  opacity: 0.25;
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 95vh;
+  /* bottom: 95vh; */
   width: 100vw;
   height: 100vh;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 1);
 }
 
 #starter-screen {
@@ -54,4 +57,76 @@ body {
 #starter-screen > img {
   width: 50em;
   margin-bottom: 15px;
+}
+
+#current-screen-header {
+  position: absolute;
+  visibility: hidden;
+  font-family: 'Draconis';
+  color: rgb(255, 191, 0);
+  font-size: 2em;
+  margin-bottom: 625px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#current-screen-header svg {
+  margin-top: 10px;
+  fill: rgb(255, 191, 0);
+  width: 20px;
+}
+
+
+
+.ui-container.pre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  max-width: 1000px;
+  transform: translateX(0vw);
+  width: 75vw;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 1);
+  transition: transform 0.25s;
+}
+
+.ui-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  max-width: 1000px;
+  transform: translateX(0vw);
+  width: 75vw;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 1);
+  transition: transform 0.25s;
+}
+
+.ui-container.post {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  max-width: 1000px;
+  transform: translateX(-100vw);
+  width: 75vw;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 1);
+  transition: all ease 1.25s;
+}
+
+#member-selection > button {
+  font-family: 'Draconis';
+  font-size: 30px;
+  border-radius: 20%;
+  width: 150px;
+  height: 150px;
+  margin: 50px;
 }
