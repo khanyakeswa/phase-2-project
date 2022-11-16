@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import CharacterCard from './CharacterCard'
 
 function PickCharacter({setHeader}) {
   useEffect(() => {
@@ -17,7 +18,7 @@ function PickCharacter({setHeader}) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <h1>Create Character!</h1>
+      <CharacterCard />
     </motion.div>
   )
 }
