@@ -7,7 +7,7 @@ function StarterScreen({ setHeader }) {
   const navigate = useNavigate()
 
   function handleStartClick() {
-    navigate('/character/selection')
+    navigate('/character')
   }
 
   useEffect(() => {

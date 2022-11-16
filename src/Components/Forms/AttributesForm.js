@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
 function AttributesForm() {
+  const navigate = useNavigate()
+
   let [TotalStatPoints, setTotalStatPoints] = useState(25);
 
   const [strength, setStrength] = useState(0);
@@ -68,6 +71,7 @@ function AttributesForm() {
       <h2 style={{ color:'white' }}>DEX: {dex * 10} </h2>
       <h2 style={{ color:'white' }}>MANA:{intel * 10} </h2>
       <button className="formsButton">ADD ATRIBUTES</button>
+      <button onClick={()=>navigate("/character/create/abilities")}>Go to abilities</button>
     </div>
   );
 }

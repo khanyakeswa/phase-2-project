@@ -1,10 +1,13 @@
 import React from "react";
-import AvatarCarousel from "../AvatarCarousel";
+// import AvatarCarousel from "../AvatarCarousel";
+import { useNavigate } from 'react-router-dom'
 
 function DetailsForm() {
+  const navigate = useNavigate()
+
   return (
     <div>
-      <AvatarCarousel />
+      {/* <AvatarCarousel /> */}
 
       <form>
         <label style={{ color:'white' }} htmlFor="name" id="name">
@@ -27,6 +30,7 @@ function DetailsForm() {
 
         <button className="formsButton">Create Character</button>
       </form>
+      <button onClick={()=>navigate("/character/create/abilities")}>Go to abilities</button>
     </div>
   );
 }

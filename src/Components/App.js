@@ -3,7 +3,12 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import CharacterScreen from './CharacterScreen'
 import PartyScreen from './PartyScreen'
 import StarterScreen from './StarterScreen'
+import PickCharacter from './PickCharacter'
+import NewCharacterForm from './NewCharacterForm'
 import { AnimatePresence } from 'framer-motion'
+import DetailsForm from "./Forms/DetailsForm";
+import AttributesForm from "./Forms/AttributesForm";
+import AbilitiesForm from "./Forms/AbilitiesForm";
 import TextTransition, { presets } from 'react-text-transition'
 
 function App() {
@@ -39,11 +44,32 @@ function App() {
         </svg> */}
       </header>
       <AnimatePresence>
-        <Routes location={location}>
+        <Routes>
           <Route
-            path='/character/*'
+            path='/character'
             element={<CharacterScreen setHeader={setHeader} />}
           />
+          <Route path='/character/create' element={<>
+            <NewCharacterForm setHeader={setHeader}/>
+            <DetailsForm />
+          </>
+          } />
+
+          <Route path='/character/create/attributes' element={
+          <>
+            <NewCharacterForm setHeader={setHeader}/>
+            <AttributesForm />
+          </>
+          } />
+
+          <Route path='/character/create/abilities' element={
+          <>
+            <NewCharacterForm setHeader={setHeader}/>
+            <AbilitiesForm />
+          </>
+          } />
+
+          <Route path='/character/pick' element={<PickCharacter setHeader={setHeader}/>}/>
           <Route
             path='/party'
             element={<PartyScreen setHeader={setHeader} />}
