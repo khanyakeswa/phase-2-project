@@ -1,30 +1,34 @@
-import React, { useEffect } from 'react'
-import DetailsForm from './Forms/DetailsForm'
-import AttributesForm from './Forms/AttributesForm'
-import AbilitiesForm from './Forms/AbilitiesForm'
-import { motion } from 'framer-motion'
+import React, { useEffect, Routes, Route, Navigate } from "react";
+import DetailsForm from "./Forms/DetailsForm";
+import AttributesForm from "./Forms/AttributesForm";
+import AbilitiesForm from "./Forms/AbilitiesForm";
+import { AnimatePresence, motion } from "framer-motion";
 
 function NewCharacterForm({ setHeader }) {
   useEffect(() => {
     const timer = setTimeout(() => {
-      setHeader('Create a New Adventurer')
-    }, 1)
-    return () => clearTimeout(timer)
-  }, [])
+      setHeader("Create a New Adventurer");
+    }, 1);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <motion.div
-    className='ui-container'
+      className="ui-container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <h1>Create Character!</h1>
-      <DetailsForm />
-      <AttributesForm />
-      <AbilitiesForm />
+      <AnimatePresence>
+        <Routes>
+          <Route path="details" element={<DetailsForm />}></Route>
+          {/* <Route path="attributes" element={<AttributesForm />}></Route>
+          <Route path="abilities" element={<AbilitiesForm />}></Route> */}
+        </Routes>
+      </AnimatePresence>
     </motion.div>
-  )
+  );
 }
 
-export default NewCharacterForm
+export default NewCharacterForm;

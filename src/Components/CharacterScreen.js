@@ -19,7 +19,7 @@ function CharacterScreen({ setHeader }) {
       <AnimatePresence>
         <Routes>
           <Route path='*' element={<MemberSelection setHeader={setHeader}/>} />
-          <Route path='create' element={<NewCharacterForm setHeader={setHeader}/>} />
+          <Route path='create/*' element={<NewCharacterForm setHeader={setHeader}/>} />
           <Route path='pick' element={<PickCharacter setHeader={setHeader}/>} />
         </Routes>
       </AnimatePresence>
