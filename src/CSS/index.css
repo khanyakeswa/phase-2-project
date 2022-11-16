@@ -60,12 +60,15 @@ button {
 }
 
 #current-screen-header {
+  text-align: center;
+  user-select: none;
   position: absolute;
-  visibility: hidden;
   font-family: 'Draconis';
   color: rgb(255, 191, 0);
+  width: 100px;
+  height: auto;
   font-size: 2em;
-  margin-bottom: 625px;
+  padding-bottom: 625px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,22 +78,6 @@ button {
   margin-top: 10px;
   fill: rgb(255, 191, 0);
   width: 20px;
-}
-
-
-
-.ui-container.pre {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 500px;
-  max-width: 1000px;
-  transform: translateX(0vw);
-  width: 75vw;
-  height: 500px;
-  background-color: rgba(255, 255, 255, 1);
-  transition: transform 0.25s;
 }
 
 .ui-container {
@@ -103,24 +90,10 @@ button {
   transform: translateX(0vw);
   width: 75vw;
   height: 500px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, .75);
   transition: transform 0.25s;
 }
 
-.ui-container.post {
-  opacity: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 500px;
-  max-width: 1000px;
-  transform: translateX(-100vw);
-  width: 75vw;
-  height: 500px;
-  background-color: rgba(255, 255, 255, 1);
-  transition: all ease 1.25s;
-}
 
 #member-selection > button {
   font-family: 'Draconis';
