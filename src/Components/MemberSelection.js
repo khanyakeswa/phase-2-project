@@ -1,21 +1,45 @@
-import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
-function MemberSelection({setCurrentCharacterScreenDisplay}) {
-    const navigate = useNavigate
+function MemberSelection({ setHeader }) {
+  const navigate = useNavigate()
+  const location = useLocation()
 
-    const [visibiltyPhase, setVisibility] = useState('')
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHeader('Add to Your Party')
+    }, 1)
+    return () => clearTimeout(timer)
+  }, [])
 
-    // function newCharacterClickHandler() {
-    //     navigate
-    // }
+  function newCharacterClickHandler() {
+    navigate('/character/create/details')
+  }
 
-    return (
-        <div id="member-selection" className={`ui-container ${visibiltyPhase}`}>
-            <button onClick={navigate('/character/create')}>create new adventurer</button>
-            <button onClick={navigate('/character/pick')}>recruit adventurer</button>
-        </div>
-    )
+  function pickCharacterClickHandler() {
+    navigate('/character/pick')
+  }
+
+  return (
+    <motion.div
+      id='member-selection'
+      className={`ui-container`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <button className='nes-btn is-primary' onClick={newCharacterClickHandler}>
+        create new adventurer
+      </button>
+      <button
+        className='nes-btn is-primary'
+        onClick={pickCharacterClickHandler}
+      >
+        recruit adventurer
+      </button>
+    </motion.div>
+  )
 }
 
 export default MemberSelection

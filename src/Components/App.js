@@ -1,31 +1,55 @@
-import { React, useState } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { React, useState, useEffect } from 'react'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import CharacterScreen from './CharacterScreen'
 import PartyScreen from './PartyScreen'
 import StarterScreen from './StarterScreen'
+import PickCharacter from './PickCharacter'
 import { AnimatePresence } from 'framer-motion'
+import TextTransition, { presets } from 'react-text-transition'
 
 function App() {
   const location = useLocation()
+  const navigate = useNavigate()
 
-  const [currentScreen, setScreen] = useState('/')
+  const [currentHeader, setHeader] = useState('')
+  const [data, setData] = useState([])
 
-  const screenTitles = {
-    '/': '',
-    '/character/select': 'Add to Your Party',
-    '/character/create': 'Create a New Adventurer',
-    '/character/create/points': 'Allocate Attribute Points',
-    '/character/create/spells': 'Select your Power',
-    '/character/pick': 'Pick an Adventurer',
-    '/party': 'Adventure Awaits!',
+  useEffect(() => {
+    fetch('http://localhost:6001/characters')
+      .then((resp) => resp.json())
+      .then((files) => {
+        setData(files)
+      })
+  }, [])
+
+  function backButtonHandler() {
+    navigate(-1)
   }
 
+  // const screenTitles = {
+  //   '/': '',
+  //   '/character/selection': 'Add to Your Party',
+  //   '/character/create': 'Create a New Adventurer',
+  //   '/character/create/points': 'Allocate Attribute Points',
+  //   '/character/create/spells': 'Select your Power',
+  //   '/character/pick': 'Pick an Adventurer',
+  //   '/party': 'Adventure Awaits!',
+  // }
+
   return (
-    <div id='window' className={currentScreen} key={location.pathname}>
-      <header id='current-screen-header'>
-        {currentScreen !== '/' ? (
-          <span>"{screenTitles[currentScreen]}"</span>
-        ) : null}
+    <div id='window' className={currentHeader} key={location.pathname}>
+      <header
+        id='current-screen-header'
+        className={currentHeader === '' ? 'hidden' : 'visible'}
+      >
+        <div className='header-container'>
+          <TextTransition
+            springConfig={presets.gentle}
+            style={{ justifyContent: 'center', height: 36.5 }}
+          >
+            <span>{currentHeader}</span>
+          </TextTransition>
+        </div>
         <svg
           id='a'
           xmlns='http://www.w3.org/2000/svg'
@@ -38,31 +62,57 @@ function App() {
         </svg>
       </header>
       <AnimatePresence>
-        <Routes location={location}>
+        <Routes>
           <Route
-            path='/character'
-            element={<CharacterScreen setScreen={setScreen} />}
+            path='/character/*'
+            element={<CharacterScreen setHeader={setHeader} />}
+          />
+          <Route
+            path='/character/pick'
+            element={
+              <PickCharacter
+                setHeader={setHeader}
+                data={data}
+              />
+            }
           />
           <Route
             path='/party'
-            element={<PartyScreen setScreen={setScreen} />}
+            element={<PartyScreen setHeader={setHeader} />}
           />
           <Route
             path='/endscreen'
-            element={<StarterScreen setScreen={setScreen} />}
+            element={<StarterScreen setHeader={setHeader} />}
           />
           <Route
             path='/'
             element={
               <StarterScreen
-                currentScreen={currentScreen}
-                setScreen={setScreen}
+                currentHeader={currentHeader}
+                setHeader={setHeader}
               />
             }
           ></Route>
-          <Route path='*' element={<Navigate to='/' replace />} />
+          <Route path='*' element={<div>OOPS</div>} />
         </Routes>
       </AnimatePresence>
+      {location.pathname !== '/' ? (
+        <div id='back-button-container'>
+          <button
+            onClick={backButtonHandler}
+            id='back-button'
+            className='nes-btn is-primary'
+          >
+            <svg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 15'>
+              <path
+                className='b'
+                d='M5,0V1.67h-1.67v1.67H1.67v1.67H0v1.67H1.67v1.67h1.67v1.67h1.67v1.67h1.67v-3.33H15v1.67h-1.67v1.67h-1.67v1.67h-1.67v1.67h5v-1.67h1.67v-1.67h1.67v-1.67h1.67v-3.33h-1.67v-1.67h-1.67v-1.67H6.67V0h-1.67Z'
+              />
+            </svg>
+          </button>
+          <span>go back</span>
+        </div>
+      ) : null}
     </div>
   )
 }

@@ -9,6 +9,66 @@ button {
   cursor: url(../Assets/Images/pixel_pointer.png), auto;
 }
 
+.nes-btn {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border.svg);
+  border-image-outset: 2;
+  padding: 6px 8px;
+  margin: 4px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #212529;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 8px;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  content: '';
+  box-shadow: inset -4px -4px #006bb3, inset 4px 4px #4db8ff;
+  transition: all ease-in-out 0.1s;
+}
+
+.nes-btn.is-primary {
+  color: #fff;
+  background-color: #209cee;
+}
+
+.nes-btn.is-primary:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #108de0;
+  box-shadow: inset -6px -6px #209cee, inset 6px 6px #006bb3, 12px 12px rgba(0, 0, 0, 0.25);
+}
+
+.nes-btn.is-primary:hover::after {
+  box-shadow: inset -6px -6px #006bb3;
+}
+
+/* .nes-btn.is-primary:focus {
+  box-shadow: 0 0 0 6px rgba(0, 107, 179, 0.3);
+} */
+
+.nes-btn.is-primary:active:not(.is-disabled)::after {
+  box-shadow: inset 4px 4px #006bb3;
+}
+.nes-btn.is-disabled,
+.nes-btn.is-disabled:hover,
+.nes-btn.is-disabled:focus {
+  color: #212529;
+  cursor: not-allowed;
+  background-color: #d3d3d3;
+  box-shadow: inset -4px -4px #adafbc;
+  opacity: 0.6;
+}
+
 #window {
   width: 100%;
   height: 100vh;
@@ -24,7 +84,6 @@ button {
 }
 
 #character-screen {
-  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -41,6 +100,8 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
   font-family: 'Draconis';
 }
 
@@ -50,47 +111,54 @@ button {
 }
 
 #starter-screen > p {
+  opacity: 1;
   color: rgba(255, 255, 255, 1);
   font-size: 2em;
+  animation: 2s ease 0s infinite blink;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #starter-screen > img {
   width: 50em;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 #current-screen-header {
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
   position: absolute;
-  visibility: hidden;
   font-family: 'Draconis';
   color: rgb(255, 191, 0);
+  width: 275px;
+  height: auto;
   font-size: 2em;
-  margin-bottom: 625px;
+  padding-bottom: 650px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #current-screen-header svg {
-  margin-top: 10px;
+  margin-top: 15px;
   fill: rgb(255, 191, 0);
   width: 20px;
 }
 
-
-
-.ui-container.pre {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 500px;
-  max-width: 1000px;
-  transform: translateX(0vw);
-  width: 75vw;
-  height: 500px;
-  background-color: rgba(255, 255, 255, 1);
-  transition: transform 0.25s;
+#current-screen-header .header-container {
+  height: 36.5px;
 }
 
 .ui-container {
@@ -103,30 +171,244 @@ button {
   transform: translateX(0vw);
   width: 75vw;
   height: 500px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.75);
   transition: transform 0.25s;
+  border-image-slice: 3;
+  border-image-width: 12;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border-2.svg);
+  border-image-outset: 2;
+  padding: 1rem 1.5rem;
+  margin: 8px;
+  border-style: inset;
+  border-width: 3px;
 }
 
-.ui-container.post {
+#member-selection > button {
+  font-family: 'Draconis';
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+  margin: 50px;
+}
+
+#back-button {
+  width: 60px;
+  height: 60px;
+  margin: 30px;
+}
+
+#back-button:hover > svg {
+  fill: rgba(255, 255, 255, 1);
+}
+#back-button:hover + span {
+  opacity: 1;
+  animation: 1s ease 0s infinite blink;
+}
+
+#back-button > svg {
+  width: 25px;
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+#back-button + span {
   opacity: 0;
+  font-family: 'Draconis';
+  font-size: 30px;
+  color: rgba(255, 255, 255, 1);
+  width: 25px;
+  transition: all ease 0.5s;
+}
+
+#back-button-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#character-card-container {
+  width: 30%;
+  min-width: 100px;
+  height: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#character-card-container button {
+  max-width: 100%;
+  width: auto;
+  height: 50px;
+  padding: 0px 30px 15px 30px;
+  margin-left: 15px;
+  margin-top: 15px;
+  font-family: 'Draconis';
+  font-size: 25px;
+}
+
+#character-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: auto;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/container-border.svg);
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 6px;
+  padding: 1rem 1.5rem;
+  margin: 15px 15px 15px 30px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.25);
+}
+
+#character-card > img {
+  width: 80%;
+  height: auto;
+}
+
+#character-card #details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Draconis';
+  margin: 20px;
+}
+
+#character-card #details-container span {
+  font-size: 30px;
+  color: #006bb3;
+}
+
+#character-card #details-container p {
+  margin-block-start: 10px;
+  font-size: 20px;
+}
+
+#character-collection-container {
+  width: 500px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/container-border.svg);
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 6px;
+  padding: 1rem 1.5rem;
+  margin: 4px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.25);
+}
+
+#character-collection-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  height: auto;
+}
+
+#character-collection-container .tile-container {
+  margin: 15px;
+  height: auto;
+  width: auto;
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: url(../Assets/Images/pixel_pointer.png), auto;
+  transition: all ease 0.25s;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: repeat;
+  border-image-source: url(../Assets/SVGs/container-border.svg);
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 4px;
+}
+
+#character-collection-container .tile-container:hover {
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+#character-collection-container .tile-container:hover img {
+  opacity: 0.5;
+}
+#character-collection-container .tile-container:hover span {
+  opacity: 1;
+}
+
+#character-collection-container .tile-container img {
+  opacity: 1;
+  max-width: 100%;
+  height: auto;
+  transition: all ease 0.25s;
+  pointer-events: none;
+}
+
+#character-collection-container .tile-container span {
+  opacity: 0;
+  position: absolute;
+  width: 100px;
+  height: auto;
+  text-align: center;
+  font-family: 'Draconis';
+  font-size: 30px;
+  color: #006bb3;
+  transition: all ease 0.25s;
+  pointer-events: none;
+}
+
+
+/*  */
+
+.abilities {
+
+  margin: 10px;
+  font-size: 50px;
+  width: 200px;
+  font-family: 'Draconis';
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: url(../Assets/Images/pixel_pointer.png), auto;
+}
+
+
+#party-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   min-width: 500px;
   max-width: 1000px;
-  transform: translateX(-100vw);
+  transform: translateX(0vw);
   width: 75vw;
   height: 500px;
-  background-color: rgba(255, 255, 255, 1);
-  transition: all ease 1.25s;
-}
-
-#member-selection > button {
-  font-family: 'Draconis';
-  font-size: 30px;
-  border-radius: 20%;
-  width: 150px;
-  height: 150px;
-  margin: 50px;
+  transition: transform 0.25s;
+  border-image-slice: 3;
+  border-image-width: 12;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border-2-gold.svg);
+  border-image-outset: 2;
+  padding: 1rem 1.5rem;
+  margin: 8px;
+  border-style: inset;
+  border-width: 3px;
 }
