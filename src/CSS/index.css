@@ -181,7 +181,7 @@ button {
   padding: 1rem 1.5rem;
   margin: 8px;
   border-style: inset;
-  border-width: 4px;
+  border-width: 3px;
 }
 
 #member-selection > button {
@@ -392,5 +392,23 @@ button {
 
 
 #party-container {
-  background-color: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  max-width: 1000px;
+  transform: translateX(0vw);
+  width: 75vw;
+  height: 500px;
+  transition: transform 0.25s;
+  border-image-slice: 3;
+  border-image-width: 12;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border-2-gold.svg);
+  border-image-outset: 2;
+  padding: 1rem 1.5rem;
+  margin: 8px;
+  border-style: inset;
+  border-width: 3px;
 }
