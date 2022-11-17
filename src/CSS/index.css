@@ -223,3 +223,92 @@ button {
   left: 0;
   bottom: 0;
 }
+
+#character-card-container {
+  width: 30%;
+  height: 100%;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#character-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#character-card > img {
+  width: 80%;
+  height: auto;
+}
+
+#character-card #details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Draconis';
+  margin: 20px;
+}
+
+#character-card #details-container span {
+  font-size: 30px;
+  color: #006bb3;
+}
+
+#character-card #details-container p {
+  margin-block-start: 10px;
+  font-size: 20px;
+}
+
+#character-collection-container {
+  width: 70%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#character-collection-container .tile-container {
+  margin: 15px;
+  height: 100px;
+  width: 100px;
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: url(../Assets/Images/pixel_pointer.png), auto;
+}
+
+#character-collection-container .tile-container:hover img{
+  opacity: .5;
+}
+#character-collection-container .tile-container:hover span{
+  opacity: 1;
+}
+
+#character-collection-container .tile-container img{
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  transition: all ease .25s;
+  pointer-events: none;
+}
+
+#character-collection-container .tile-container span{
+  opacity: 0;
+  position: absolute;
+  width: 100px;
+  height: auto;
+  text-align: center;
+  font-family: 'Draconis';
+  font-size: 30px;
+  color: #006bb3;
+  transition: all ease .25s;
+  pointer-events: none;
+}

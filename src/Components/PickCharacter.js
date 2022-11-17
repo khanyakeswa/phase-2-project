@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard'
 import CharacterCollection from './CharacterCollection'
 
 function PickCharacter({ setHeader }) {
-  const [selectedCharacter, setSelectedCharacter] = useState('')
+  const [selectedCharacter, setSelectedCharacter] = useState({})
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -16,9 +16,12 @@ function PickCharacter({ setHeader }) {
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:3000/characters')
+    fetch('http://localhost:6001/characters')
       .then((resp) => resp.json())
-      .then((files) => setData(files))
+      .then((files) => {
+        setData(files)
+        setSelectedCharacter(files[0])
+      })
   }, [])
 
   // const dataArray = data.map((character) => {
@@ -27,13 +30,14 @@ function PickCharacter({ setHeader }) {
 
   return (
     <motion.div
+      id='pic-character'
       className={`ui-container`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <CharacterCard selectedCharacter={selectedCharacter} />
-      <CharacterCollection setSelectedCharacter={setSelectedCharacter} />
+      <CharacterCollection setSelectedCharacter={setSelectedCharacter} charactersData={data}/>
     </motion.div>
   )
 }
