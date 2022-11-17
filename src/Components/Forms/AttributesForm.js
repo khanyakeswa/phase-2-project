@@ -1,48 +1,46 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function AttributesForm() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  let [TotalStatPoints, setTotalStatPoints] = useState(25);
+
+  let max = 25;
 
   const [strength, setStrength] = useState(0);
   const [dex, setDex] = useState(0);
   const [intel, setIntel] = useState(0);
 
+  const totalPoints = Number(strength) + Number(dex) + Number(intel);
+  const remainder = max - totalPoints;
+
   const handleStrengthChange = (e) => {
-    setStrength(e.target.value);
+    return remainder > 0 ? setStrength(e.target.value) : null;
   };
 
   const handleDexChange = (e) => {
-    setDex(e.target.value);
+    return remainder > 0 ? setDex(e.target.value) : null;
   };
 
   const handleIntelChange = (e) => {
-    setIntel(e.target.value);
+    return remainder > 0 ? setIntel(e.target.value) : null;
   };
-
-    const totalPoints = Number(strength) + Number(dex) + Number(intel);
-    
-   
-   
 
   return (
     <div>
       <form>
-        <label style={{ color:'white' }}htmlFor="strength">
+        <label style={{ color: "white" }} htmlFor="strength">
           STRENGTH
           <input
             type="number"
             id="strength"
             value={strength}
             min="0"
-            max={TotalStatPoints}
             onChange={handleStrengthChange}
           />
         </label>
 
-        <label style={{ color:'white' }} htmlFor="dex">
+        <label style={{ color: "white" }} htmlFor="dex">
           DEX
           <input
             type="number"
@@ -50,11 +48,10 @@ function AttributesForm() {
             value={dex}
             onChange={handleDexChange}
             min="0"
-            max={TotalStatPoints}
           />
         </label>
 
-        <label style={{ color:'white' }} htmlFor="intel">
+        <label style={{ color: "white" }} htmlFor="intel">
           INTEL
           <input
             type="number"
@@ -62,16 +59,19 @@ function AttributesForm() {
             value={intel}
             onChange={handleIntelChange}
             min="0"
-            max={TotalStatPoints}
           />
         </label>
       </form>
 
-      <h2 style={{ color:'white' }}>Health: {strength * 10}</h2>
-      <h2 style={{ color:'white' }}>DEX: {dex * 10} </h2>
-      <h2 style={{ color:'white' }}>MANA:{intel * 10} </h2>
-      <button className="formsButton">ADD ATRIBUTES</button>
-      <button onClick={()=>navigate("/character/create/abilities")}>Go to abilities</button>
+      <h2 style={{ color: "white" }}>Health: {strength * 10}</h2>
+      <h2 style={{ color: "white" }}>DEX: {dex * 10} </h2>
+      <h2 style={{ color: "white" }}>MANA:{intel * 10} </h2>
+      <button
+        className="formsButton"
+        onClick={() => navigate("/character/create/abilities")}
+      >
+        ADD ATRIBUTES
+      </button>
     </div>
   );
 }

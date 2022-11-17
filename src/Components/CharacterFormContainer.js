@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 
 function CharacterFormContainer({ setHeader }) {
-  console.log('form')
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setHeader('Create a New Adventurer')

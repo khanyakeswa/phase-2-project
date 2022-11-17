@@ -370,6 +370,27 @@ button {
   pointer-events: none;
 }
 
+
+/*  */
+
+.abilities {
+
+  margin: 10px;
+  font-size: 50px;
+  width: 200px;
+  font-family: 'Draconis';
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: url(../Assets/Images/pixel_pointer.png), auto;
+}
+
+
 #party-container {
   background-color: none;
 }
