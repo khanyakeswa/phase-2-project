@@ -176,12 +176,11 @@ button {
   border-image-slice: 3;
   border-image-width: 12;
   border-image-repeat: stretch;
-  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-source: url(../Assets/SVGs/border-2.svg);
   border-image-outset: 2;
   padding: 1rem 1.5rem;
   margin: 8px;
   border-style: inset;
-  border-color: rgb(255, 191, 0);
   border-width: 4px;
 }
 
@@ -229,11 +228,24 @@ button {
 
 #character-card-container {
   width: 30%;
+  min-width: 100px;
   height: 100%;
   align-self: flex-start;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#character-card-container button {
+  max-width: 100%;
+  width: auto;
+  height: 50px;
+  padding: 0px 30px 15px 30px;
+  margin-left: 15px;
+  margin-top: 15px;
+  font-family: 'Draconis';
+  font-size: 25px;
 }
 
 #character-card {
@@ -241,6 +253,18 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  width: auto;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/container-border.svg);
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 6px;
+  padding: 1rem 1.5rem;
+  margin: 15px 15px 15px 30px;
+  box-shadow: 12px 12px rgba(0, 0, 0, 0.25);
 }
 
 #character-card > img {
@@ -269,7 +293,7 @@ button {
 }
 
 #character-collection-container {
-  width: min-content;
+  width: 500px;
   height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -296,8 +320,8 @@ button {
 
 #character-collection-container .tile-container {
   margin: 15px;
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: auto;
   justify-self: center;
   display: flex;
   flex-direction: row;
@@ -327,8 +351,8 @@ button {
 
 #character-collection-container .tile-container img {
   opacity: 1;
-  width: 100px;
-  height: 100px;
+  max-width: 100%;
+  height: auto;
   transition: all ease 0.25s;
   pointer-events: none;
 }
@@ -344,4 +368,8 @@ button {
   color: #006bb3;
   transition: all ease 0.25s;
   pointer-events: none;
+}
+
+#party-container {
+  background-color: none;
 }

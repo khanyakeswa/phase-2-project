@@ -12,6 +12,15 @@ function App() {
   const navigate = useNavigate()
 
   const [currentHeader, setHeader] = useState('')
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:6001/characters')
+      .then((resp) => resp.json())
+      .then((files) => {
+        setData(files)
+      })
+  }, [])
 
   function backButtonHandler() {
     navigate(-1)
@@ -60,7 +69,12 @@ function App() {
           />
           <Route
             path='/character/pick'
-            element={<PickCharacter setHeader={setHeader} />}
+            element={
+              <PickCharacter
+                setHeader={setHeader}
+                data={data}
+              />
+            }
           />
           <Route
             path='/party'
@@ -82,17 +96,23 @@ function App() {
           <Route path='*' element={<div>OOPS</div>} />
         </Routes>
       </AnimatePresence>
-      {location.pathname !== "/" ? <div id='back-button-container'>
-        <button onClick={backButtonHandler} id='back-button' className='nes-btn is-primary'>
-          <svg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 15'>
-            <path
-              className='b'
-              d='M5,0V1.67h-1.67v1.67H1.67v1.67H0v1.67H1.67v1.67h1.67v1.67h1.67v1.67h1.67v-3.33H15v1.67h-1.67v1.67h-1.67v1.67h-1.67v1.67h5v-1.67h1.67v-1.67h1.67v-1.67h1.67v-3.33h-1.67v-1.67h-1.67v-1.67H6.67V0h-1.67Z'
-            />
-          </svg>
-        </button>
-        <span>go back</span>
-      </div>: null}
+      {location.pathname !== '/' ? (
+        <div id='back-button-container'>
+          <button
+            onClick={backButtonHandler}
+            id='back-button'
+            className='nes-btn is-primary'
+          >
+            <svg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 15'>
+              <path
+                className='b'
+                d='M5,0V1.67h-1.67v1.67H1.67v1.67H0v1.67H1.67v1.67h1.67v1.67h1.67v1.67h1.67v-3.33H15v1.67h-1.67v1.67h-1.67v1.67h-1.67v1.67h5v-1.67h1.67v-1.67h1.67v-1.67h1.67v-3.33h-1.67v-1.67h-1.67v-1.67H6.67V0h-1.67Z'
+              />
+            </svg>
+          </button>
+          <span>go back</span>
+        </div>
+      ) : null}
     </div>
   )
 }

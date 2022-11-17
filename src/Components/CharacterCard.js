@@ -1,6 +1,13 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function CharacterCard({selectedCharacter}) {
+  const navigate = useNavigate()
+
+  function recruitButtonClickHandler() {
+    navigate('/party')
+  }
+
   return (
     <div id='character-card-container'>
       <div id='character-card'>
@@ -10,6 +17,7 @@ function CharacterCard({selectedCharacter}) {
           <p>Description</p>
         </div>
       </div>
+      <button onClick={recruitButtonClickHandler} className='nes-btn is-primary' >recruit</button>
     </div>
   )
 }

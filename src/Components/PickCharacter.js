@@ -4,26 +4,17 @@ import { motion } from 'framer-motion'
 import CharacterCard from './CharacterCard'
 import CharacterCollection from './CharacterCollection'
 
-function PickCharacter({ setHeader }) {
+function PickCharacter({ setHeader, data }) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
-  const [data, setData] = useState([])
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setHeader('Recruit an Adventurer')
+      setSelectedCharacter(data[0])
     }, 1)
     return () => clearTimeout(timer)
   }, [])
-
-  useEffect(() => {
-    fetch('http://localhost:6001/characters')
-      .then((resp) => resp.json())
-      .then((files) => {
-        setData(files)
-        setSelectedCharacter(files[0])
-      })
-  }, [])
-
+  
   // const dataArray = data.map((character) => {
   //   ;<CharacterCard key={character.id} dataObj={character} />
   // })
