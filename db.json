@@ -1,0 +1,157 @@
+{
+    "characters": [
+         {
+             "id": "1", 
+             "name": "wizard ",
+             "stat": {
+                 "strength": "12",
+                 "dex": "9",
+                 "intel": "4",
+                 "health": "120",
+                 "endurance": "90",
+                 "MANA": "40"
+             },
+             "abilities": {
+                 
+                 "Acid Splash": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a dexterity saving throw or take 1d6 acid damage.", 
+                 "Chill Touch": "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn. Until then, the hand clings to the target.",
+                 "Dancing Lights":   "You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius."
+  
+             }
+         }, 
+  
+         {  
+             "id": "2", 
+             "name": "bard ",
+             "stat": {
+                 "strength": "10",
+                 "dex": "10",
+                 "intel": "5",
+                 "health": "100",
+                 "endurance": "100",
+                 "MANA": "50"
+             },
+             "abilities": {
+                
+                 "Light": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.",
+                 "Mage Hand": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
+                 "Mending": "This spell repairs a single break or tear in an object you touch, such as a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no longer than 1 foot in any dimension, you mend it, leaving no trace of the former damage."
+             }
+         },
+        
+         {  
+             "id": "3", 
+             "name": "cleric",
+             "stat": {
+                 "strength": "7",
+                 "dex": "13",
+                 "intel": "5",
+                 "health": "70",
+                 "endurance": "130",
+                 "MANA": "50"
+             },
+             "abilities": {
+  
+                 "Guidance": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+                 "Resistance": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
+                 "Sacred Flame": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw."
+             }
+         },
+  
+         {  
+             "id": "4", 
+             "name": "druid",
+             "stat": {
+                 "strength": "4",
+                 "dex": "9",
+                 "intel": "12",
+                 "health": "40",
+                 "endurance": "90",
+                 "MANA": "120"
+             },
+             "abilities": {
+                 
+                 "Produce Flame": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.",
+                 "Shillelagh": "The wood of a club or a quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon.",
+                 "Animal Friendship": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spells ends."
+             }
+         },
+  
+         {  
+             "id": "5", 
+             "name": "warlock",
+             "stat": {
+                 "strength": "15",
+                 "dex": "4",
+                 "intel": "6",
+                 "health": "150",
+                 "endurance": "40",
+                 "MANA": "60"
+             },
+             "abilities": {
+  
+                 "Chill Touch": "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn. Until then, the hand clings to the target.",
+                 "Eldritch Blast": "A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage. The spell creates more than one beam when you reach higher levels: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
+                 "Minor Illusion": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again."
+             }
+         },
+  
+         {  
+             "id": "6", 
+             "name": "sorcerer",
+             "stat": {
+                 "strength": "4",
+                 "dex": "4",
+                 "intel": "17",
+                 "health": "40",
+                 "endurance": "40",
+                 "MANA": "170"
+             },
+             "abilities": {
+                 
+                 "Fire Bolt": "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.",
+                 "Message": "You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.",
+                 "Poison Spray": "You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a constitution saving throw or take 1d12 poison damage."
+             } 
+         },
+        
+         {  
+             "id": "7", 
+             "name": "paladin",
+             "stat": {
+                 "strength": "7",
+                 "dex": "9",
+                 "intel": "9",
+                 "health": "70",
+                 "endurance": "90",
+                 "MANA": "90"
+             },
+             "abilities": {
+                 
+                 "Bless": "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
+                 "Command": "You speak a one-word command to a creature you can see within range. The target must succeed on a wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.",
+                 "Cure Wounds": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs."
+             }   
+         },
+  
+         {  
+             "id": "8", 
+             "name": "ranger",
+             "stat": {
+                 "strength": "7",
+                 "dex": "11",
+                 "intel": "7",
+                 "health": "70",
+                 "endurance": "110",
+                 "MANA": "70"
+             },
+             "abilities": {
+                 
+                 "Alarm": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.",
+                 "Detect Magic": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.",
+                 "Detect Poison and Disease": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case."
+             }
+         }
+        
+     ]
+  }
