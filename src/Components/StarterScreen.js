@@ -7,12 +7,12 @@ function StarterScreen({ setHeader }) {
   const navigate = useNavigate()
 
   function handleStartClick() {
-    navigate('/character')
+    navigate('/character/selection')
   }
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setHeader('')
+      setHeader('"Adventure Awaits!"')
     }, 1)
     return () => clearTimeout(timer)
   }, [])

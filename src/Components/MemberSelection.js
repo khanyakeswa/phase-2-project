@@ -8,13 +8,13 @@ function MemberSelection({ setHeader }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        setHeader('Add to Your Party');
-    }, 1);
-    return () => clearTimeout(timer);
-  }, []);
+      setHeader('Add to Your Party')
+    }, 1)
+    return () => clearTimeout(timer)
+  }, [])
 
   function newCharacterClickHandler() {
-    navigate('/character/create')
+    navigate('/character/create/details')
   }
 
   function pickCharacterClickHandler() {
@@ -29,8 +29,15 @@ function MemberSelection({ setHeader }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <button onClick={newCharacterClickHandler}>create new adventurer</button>
-      <button onClick={pickCharacterClickHandler}>recruit adventurer</button>
+      <button className='nes-btn is-primary' onClick={newCharacterClickHandler}>
+        create new adventurer
+      </button>
+      <button
+        className='nes-btn is-primary'
+        onClick={pickCharacterClickHandler}
+      >
+        recruit adventurer
+      </button>
     </motion.div>
   )
 }

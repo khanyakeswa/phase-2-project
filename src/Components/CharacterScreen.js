@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
-import NewCharacterForm from './NewCharacterForm'
+import CharacterFormContainer from './CharacterFormContainer'
 import PickCharacter from './PickCharacter'
 import MemberSelection from './MemberSelection'
 import { AnimatePresence, motion } from 'framer-motion'
+import DetailsForm from './Forms/DetailsForm'
+import AttributesForm from './Forms/AttributesForm'
+import AbilitiesForm from './Forms/AbilitiesForm'
 
 function CharacterScreen({ setHeader }) {
   const [currentCharacterScreenDisplay, setCurrentCharacterScreenDisplay] =
@@ -18,9 +21,19 @@ function CharacterScreen({ setHeader }) {
     >
       <AnimatePresence>
         <Routes>
-          <Route path='' element={<MemberSelection setHeader={setHeader}/>} />
-          {/* <Route path='create' element={<NewCharacterForm setHeader={setHeader}/>} /> */}
-          {/* <Route path='pick' element={<PickCharacter setHeader={setHeader}/>} /> */}
+          <Route path='selection' element={<MemberSelection setHeader={setHeader} />} />
+          <Route
+            path='create'
+            element={<CharacterFormContainer setHeader={setHeader} />}
+          >
+            <Route path='details' element={<DetailsForm />} />
+            <Route path='attributes' element={<AttributesForm />} />
+            <Route path='abilities' element={<AbilitiesForm />} />
+          </Route>
+          <Route
+            path='pick'
+            element={<PickCharacter setHeader={setHeader} />}
+          />
         </Routes>
       </AnimatePresence>
     </motion.div>
