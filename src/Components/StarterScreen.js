@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 
 function StarterScreen({ setHeader }) {
   const navigate = useNavigate()
+  
 
   function handleStartClick() {
     navigate('/character/selection')

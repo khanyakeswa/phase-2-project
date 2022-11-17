@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import CharacterScreen from './CharacterScreen'
 import PartyScreen from './PartyScreen'
 import StarterScreen from './StarterScreen'
@@ -9,8 +9,13 @@ import TextTransition, { presets } from 'react-text-transition'
 
 function App() {
   const location = useLocation()
+  const navigate = useNavigate()
 
   const [currentHeader, setHeader] = useState('')
+
+  function backButtonHandler() {
+    navigate(-1)
+  }
 
   // const screenTitles = {
   //   '/': '',
@@ -27,13 +32,14 @@ function App() {
       <header
         id='current-screen-header'
         className={currentHeader === '' ? 'hidden' : 'visible'}
-      ><div className='header-container'>
-        <TextTransition
-          springConfig={presets.gentle}
-          style={{ justifyContent: 'center', height: 36.5 }}
-        >
-          <span>{currentHeader}</span>
-        </TextTransition>
+      >
+        <div className='header-container'>
+          <TextTransition
+            springConfig={presets.gentle}
+            style={{ justifyContent: 'center', height: 36.5 }}
+          >
+            <span>{currentHeader}</span>
+          </TextTransition>
         </div>
         <svg
           id='a'
@@ -76,6 +82,17 @@ function App() {
           <Route path='*' element={<div>OOPS</div>} />
         </Routes>
       </AnimatePresence>
+      {location.pathname !== "/" ? <div id='back-button-container'>
+        <button onClick={backButtonHandler} id='back-button' className='nes-btn is-primary'>
+          <svg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 15'>
+            <path
+              className='b'
+              d='M5,0V1.67h-1.67v1.67H1.67v1.67H0v1.67H1.67v1.67h1.67v1.67h1.67v1.67h1.67v-3.33H15v1.67h-1.67v1.67h-1.67v1.67h-1.67v1.67h5v-1.67h1.67v-1.67h1.67v-1.67h1.67v-3.33h-1.67v-1.67h-1.67v-1.67H6.67V0h-1.67Z'
+            />
+          </svg>
+        </button>
+        <span>go back</span>
+      </div>: null}
     </div>
   )
 }
