@@ -2,10 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './CSS/index.css'
 import './CSS/fonts.css'
-import './Assets/Images/pixel_cursor.png'
 import App from './Components/App'
 import reportWebVitals from './reportWebVitals'
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
