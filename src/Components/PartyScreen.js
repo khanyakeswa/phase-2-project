@@ -4,10 +4,7 @@ import PlaceHolderCharacterCard from './PlaceholderCharacterCard'
 import FinalCharacterCard from './FinalCharacterCard'
 import Confetti from './Confetti'
 
-function PartyScreen({setHeader}) {
-  const [savedCharacters, setSavedCharacters] = useState([])
-  const [btn, setBtn] = useState(false)
-
+function PartyScreen({ setHeader, savedCharacters, setSavedCharacters }) {
   useEffect(() => {
     fetch('http://localhost:6001/savedCharacters')
     .then((response) => response.json())
@@ -15,9 +12,16 @@ function PartyScreen({setHeader}) {
   },[])
 
   const cardList = savedCharacters.map((char) => {
-        if(char.name) {return(
-          <FinalCharacterCard key={char.id} character={char} savedCharacters={savedCharacters} setSavedCharacters={setSavedCharacters}/>
-        )}
+    if (char.name) {
+      return (
+        <FinalCharacterCard
+          key={char.id}
+          character={char}
+          savedCharacters={savedCharacters}
+          setSavedCharacters={setSavedCharacters}
+        />
+      )
+    }
   })
 
   useEffect(() => {
@@ -37,7 +41,7 @@ function PartyScreen({setHeader}) {
       <div id='party-container'>
         {cardList}
         {savedCharacters.length < 4 ? <PlaceHolderCharacterCard /> : null}
-        <Confetti savedCharacters={savedCharacters}/>
+        <Confetti savedCharacters={savedCharacters} />
       </div>
     </motion.div>
   )

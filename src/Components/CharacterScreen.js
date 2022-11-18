@@ -8,10 +8,7 @@ import DetailsForm from './Forms/DetailsForm'
 import AttributesForm from './Forms/AttributesForm'
 import AbilitiesForm from './Forms/AbilitiesForm'
 
-function CharacterScreen({ setHeader }) {
-  const [currentCharacterScreenDisplay, setCurrentCharacterScreenDisplay] =
-    useState('member-selection')
-
+function CharacterScreen({ setHeader, savedCharacters, setSavedCharacters, data }) {
   return (
     <motion.div
       id='character-screen'
@@ -32,7 +29,7 @@ function CharacterScreen({ setHeader }) {
           </Route>
           <Route
             path='pick'
-            element={<PickCharacter setHeader={setHeader} />}
+            element={<PickCharacter savedCharacters={savedCharacters} setSavedCharacters={setSavedCharacters} setHeader={setHeader} data={data}/>}
           />
         </Routes>
       </AnimatePresence>
