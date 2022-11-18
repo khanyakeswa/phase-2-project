@@ -1,11 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PlaceHolderCharacterCard = () => {
+    const navigate = useNavigate()
+
+    const recruitButtonHandler = () => {
+        navigate('/character/pick')
+    }
+
     return (
         <div id='placeholder-character-card'>
             <div id='placeholder-wrapper'>
                 <span>position empty</span>
-                <button className='nes-btn is-primary'>recruit</button>
+                <button onClick={recruitButtonHandler} className='nes-btn is-primary'>recruit</button>
             </div>
         </div>
     )

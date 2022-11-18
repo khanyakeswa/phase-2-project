@@ -6,6 +6,7 @@ import StarterScreen from './StarterScreen'
 import PickCharacter from './PickCharacter'
 import { AnimatePresence } from 'framer-motion'
 import TextTransition, { presets } from 'react-text-transition'
+// import 
 
 function App() {
   const location = useLocation()
@@ -80,7 +81,12 @@ function App() {
           />
           <Route
             path='/party'
-            element={<PartyScreen setHeader={setHeader} savedCharacters={savedCharacters}/>}
+            element={
+              <PartyScreen
+                setHeader={setHeader}
+                savedCharacters={savedCharacters}
+              />
+            }
           />
           <Route
             path='/endscreen'
@@ -98,7 +104,8 @@ function App() {
           <Route path='*' element={<div>OOPS</div>} />
         </Routes>
       </AnimatePresence>
-      {location.pathname !== '/' ? (
+      {location.pathname === '/party' ? null :
+      location.pathname !== '/' ? (
         <div id='back-button-container'>
           <button
             onClick={backButtonHandler}

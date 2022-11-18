@@ -2,13 +2,22 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TextTransition, { presets } from 'react-text-transition'
 
-
-function CharacterCard({ selectedCharacter }) {
+function CharacterCard({
+  selectedCharacter,
+  savedCharacters,
+  setSavedCharacters,
+}) {
   const navigate = useNavigate()
   console.log(selectedCharacter.description)
 
   function recruitButtonClickHandler() {
     navigate('/party')
+    // setSavedCharacters([...savedCharacters, selectedCharacter])
+    fetch('http://localhost:6001/savedCharacters', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/JSON' },
+      body: JSON.stringify(selectedCharacter),
+    })
   }
 
   return (
