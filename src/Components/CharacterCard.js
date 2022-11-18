@@ -1,7 +1,8 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import TextTransition, { presets } from 'react-text-transition'
 
-function CharacterCard({selectedCharacter}) {
+function CharacterCard({ selectedCharacter }) {
   const navigate = useNavigate()
 
   function recruitButtonClickHandler() {
@@ -13,11 +14,23 @@ function CharacterCard({selectedCharacter}) {
       <div id='character-card'>
         <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'></img>
         <div id='details-container'>
-          <span>{selectedCharacter.name}</span>
+          <TextTransition
+            direction='down'
+            springConfig={presets.gentle}
+            style={{ justifyContent: 'center', height: 36.5 }}
+          >
+            <span>{selectedCharacter.name}</span>
+          </TextTransition>
+          <span></span>
           <p>Description</p>
         </div>
       </div>
-      <button onClick={recruitButtonClickHandler} className='nes-btn is-primary' >recruit</button>
+      <button
+        onClick={recruitButtonClickHandler}
+        className='nes-btn is-primary'
+      >
+        recruit
+      </button>
     </div>
   )
 }
