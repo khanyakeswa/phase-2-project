@@ -5,7 +5,7 @@ import TextTransition, { presets } from 'react-text-transition'
 
 function CharacterCard({ selectedCharacter }) {
   const navigate = useNavigate()
-  const characterImg = selectedCharacter.img
+  console.log(selectedCharacter.description)
 
   function recruitButtonClickHandler() {
     navigate('/party')
@@ -14,7 +14,7 @@ function CharacterCard({ selectedCharacter }) {
   return (
     <div id='character-card-container'>
       <div id='character-card'>
-        <img src={require( characterImg)}></img>
+        <img src={process.env.PUBLIC_URL + selectedCharacter.img}></img>
         <div id='details-container'>
           <div id='card-name-container'>
             <TextTransition
@@ -26,7 +26,7 @@ function CharacterCard({ selectedCharacter }) {
             </TextTransition>
           </div>
           <span></span>
-          <p>Description</p>
+          <p>{selectedCharacter.description}</p>
         </div>
       </div>
       <button
