@@ -5,7 +5,7 @@ const PlaceHolderCharacterCard = () => {
     const navigate = useNavigate()
 
     const recruitButtonHandler = () => {
-        navigate('/character/pick')
+        navigate('/character/selection')
     }
 
     return (

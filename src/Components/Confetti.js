@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactConfetti from 'react-confetti'
 
-const Confetti = ({btn}) => {
+const Confetti = ({savedCharacters}) => {
   const [windowDimentions, setDimenstion] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -25,13 +25,13 @@ const Confetti = ({btn}) => {
       {/* <button id='finalSubmission' className='nes-btn is-primary' onClick={() => setBtn(!btn)}>
         Final Submission
       </button> */}
-      {btn && (
+      {savedCharacters.length === 4 ? (
         <ReactConfetti
           width={windowDimentions.width}
           height={windowDimentions.height}
           tweenDuration={1000}
         />
-      )}
+      ): null}
     </>
   )
 }

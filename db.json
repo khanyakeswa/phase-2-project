@@ -2,7 +2,7 @@
   "characters": [
     {
       "id": "1",
-      "name": "wizard ",
+      "name": "Remus ",
       "img": "/wizard.jpg",
       "imgCropped": "/wizard-cropped.jpg",
       "stat": {
@@ -22,7 +22,7 @@
     },
     {
       "id": "2",
-      "name": "bard ",
+      "name": "Finn ",
       "img": "/bard.jpg",
       "imgCropped": "./bard-cropped.jpg",
       "stat": {
@@ -42,7 +42,7 @@
     },
     {
       "id": "3",
-      "name": "cleric",
+      "name": "Aldwin",
       "img": "/cleric.jpg",
       "imgCropped": "/cleric-cropped.jpg",
       "stat": {
@@ -62,7 +62,7 @@
     },
     {
       "id": "4",
-      "name": "druid",
+      "name": "Oberyn",
       "img": "/druid.jpg",
       "imgCropped": "/druid-cropped.jpg",
       "stat": {
@@ -82,7 +82,7 @@
     },
     {
       "id": "5",
-      "name": "warlock",
+      "name": "Cullen",
       "img": "/warlock.jpg",
       "imgCropped": "/warlock-cropped.jpg",
       "stat": {
@@ -102,7 +102,7 @@
     },
     {
       "id": "6",
-      "name": "sorcerer",
+      "name": "Shasta",
       "img": "/sorcerer.jpg",
       "imgCropped": "/sorcerer-cropped.jpg",
       "stat": {
@@ -122,7 +122,7 @@
     },
     {
       "id": "7",
-      "name": "paladin",
+      "name": "Bode",
       "img": "/paladin.jpg",
       "imgCropped": "/paladin-cropped.jpg",
       "stat": {
@@ -142,7 +142,7 @@
     },
     {
       "id": "8",
-      "name": "ranger",
+      "name": "Jaime",
       "img": "/ranger.jpg",
       "imgCropped": "/ranger-cropped.jpg",
       "stat": {
@@ -158,49 +158,9 @@
         "Detect Magic": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.",
         "Detect Poison and Disease": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case."
       },
-      "description": "Rough and wild looking, a human stalks alone through the shadows of trees, hunting the orcs he knows are planning a raid on a nearby farm. Clutching a shortsword in each hand"
+      "description": "Rough and wild looking, a cyclopse stalks alone through the shadows of trees, hunting the orcs he knows are planning a raid on a nearby farm. Clutching a shortsword in each hand"
     }
   ],
   "savedCharacters": [
-    {
-      "id": "3",
-      "name": "cleric",
-      "img": "/cleric.jpg",
-      "imgCropped": "/cleric-cropped.jpg",
-      "stat": {
-        "strength": "7",
-        "dex": "13",
-        "intel": "5",
-        "health": "70",
-        "endurance": "130",
-        "MANA": "50"
-      },
-      "abilities": {
-        "Guidance": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
-        "Resistance": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
-        "Sacred Flame": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw."
-      },
-      "description": "In your earlier days, you were a personage of some significance in a noble court or a bureaucratic organization. You might or might not come from an upper-class family; your talents, rather than the circumstances of your birth, could have secured you this position."
-    },
-    {
-      "id": "4",
-      "name": "druid",
-      "img": "/druid.jpg",
-      "imgCropped": "/druid-cropped.jpg",
-      "stat": {
-        "strength": "4",
-        "dex": "9",
-        "intel": "12",
-        "health": "40",
-        "endurance": "90",
-        "MANA": "120"
-      },
-      "abilities": {
-        "Produce Flame": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.",
-        "Shillelagh": "The wood of a club or a quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon.",
-        "Animal Friendship": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spells ends."
-      },
-      "description": "You grew up in the Feywild after disappearing from your home plane as a child. Perhaps you were spirited away by kindly Fey who thought you were destined for great things. Perhaps you stumbled through a Fey crossing by chance during a twilight stroll in the woods."
-    }
   ]
 }

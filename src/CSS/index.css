@@ -9,6 +9,13 @@ button {
   cursor: url(../../public/pixel_pointer.png), auto;
 }
 
+*::-webkit-scrollbar {
+  /* border: none;
+  background-color: transparent; */
+  pointer-events: fill;
+} /* webkit browsers(safari, chrome) */
+
+
 .nes-btn {
   border-image-slice: 2;
   border-image-width: 2;
@@ -477,10 +484,31 @@ button {
   width: 20px;
   right: 0px;
   align-self: flex-end;
-  transform: translateX(5px) translateY(-5px);
+  transform: translateX(15px) translateY(-5px);
   z-index: 2;
-  cursor: '../../public/pixel_pointer.png';
+  cursor: url(../../public/pixel_pointer.png), auto;
+  padding: 15px;
 }
+
+#down-arrow {
+  opacity: 0;
+  fill: #fff;
+  margin-top: 5px;
+  width: 15px;
+  transition: all ease .25s;
+  animation: bounce 1s ease .75s infinite;
+}
+
+#details-container:hover > #down-arrow {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(9px);}
+  100% {transform: translateY(0px);}
+}
+
 #close-svg {
   fill: rgba(255, 255, 255, 0);
   transition: all ease .1s;

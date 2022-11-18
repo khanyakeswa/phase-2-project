@@ -14,16 +14,6 @@ function PartyScreen({setHeader}) {
     .then(data => setSavedCharacters(data))
   },[])
 
-  function createConfetti() {
-    savedCharacters.length = 4 ? setBtn(true) : null
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      createConfetti()
-    }, 1);
-  },[])
-
   const cardList = savedCharacters.map((char) => {
         if(char.name) {return(
           <FinalCharacterCard key={char.id} character={char} savedCharacters={savedCharacters} setSavedCharacters={setSavedCharacters}/>
@@ -47,7 +37,7 @@ function PartyScreen({setHeader}) {
       <div id='party-container'>
         {cardList}
         {savedCharacters.length < 4 ? <PlaceHolderCharacterCard /> : null}
-        <Confetti btn={btn}/>
+        <Confetti savedCharacters={savedCharacters}/>
       </div>
     </motion.div>
   )
