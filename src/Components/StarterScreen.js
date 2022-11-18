@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import titleImage from '../Assets/Images/dnd-vector.svg'
+// import titleImage from './Images/dnd-vector.png'
 import { motion } from 'framer-motion'
 
 function StarterScreen({ setHeader }) {
@@ -26,7 +26,7 @@ function StarterScreen({ setHeader }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <img src={titleImage} alt='dnd'></img>
+      <img src='/dnd-vector.png' alt='dnd'></img>
       <span>CAMPAIGN PARTY CREATOR</span>
       <br />
       <p>click anywhere to begin</p>

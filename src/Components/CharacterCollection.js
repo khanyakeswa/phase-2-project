@@ -13,7 +13,7 @@ const CharacterCollection = ({ setSelectedCharacter, charactersData }) => {
         onClick={tileClickHandler}
         className='tile-container'
       >
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'></img>
+        <img src={obj.img}></img>
         <span>{obj.name}</span>
       </div>
     )
