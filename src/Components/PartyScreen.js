@@ -19,10 +19,7 @@ function PartyScreen({setHeader}) {
       exit={{ opacity: 0 }}
     >
       <div id='party-container'>
-        <div></div>
-        // character container
-        // character container
-        // character container
+        {}
       </div>
     </motion.div>
   )

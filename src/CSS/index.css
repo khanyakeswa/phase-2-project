@@ -26,7 +26,7 @@ button {
   color: #212529;
   background-color: #fff;
   border-style: solid;
-  border-width: 8px;
+  border-width: 6px;
   top: -4px;
   right: -4px;
   bottom: -4px;
@@ -45,7 +45,8 @@ button {
   color: #fff;
   text-decoration: none;
   background-color: #108de0;
-  box-shadow: inset -6px -6px #209cee, inset 6px 6px #006bb3, 12px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: inset -6px -6px #209cee, inset 6px 6px #006bb3,
+    12px 12px rgba(0, 0, 0, 0.25);
 }
 
 .nes-btn.is-primary:hover::after {
@@ -270,6 +271,13 @@ button {
 #character-card > img {
   width: 80%;
   height: auto;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: repeat;
+  border-image-source: url(../Assets/SVGs/container-border-gold.svg);
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 6px;
 }
 
 #character-card #details-container {
@@ -370,11 +378,7 @@ button {
   pointer-events: none;
 }
 
-
-/*  */
-
 .abilities {
-
   margin: 10px;
   font-size: 50px;
   width: 200px;
@@ -389,7 +393,6 @@ button {
   text-align: center;
   cursor: url(../Assets/Images/pixel_pointer.png), auto;
 }
-
 
 #party-container {
   display: flex;
@@ -410,5 +413,34 @@ button {
   padding: 1rem 1.5rem;
   margin: 8px;
   border-style: inset;
-  border-width: 3px;
+  border-width: 2px;
+  background: radial-gradient(circle, rgba(255,120,0,0) 0%, rgba(255,100,0,0.1) 50%, rgba(255,120,0,.25) 90%, rgba(255,120,0, 0) 100%);
+  animation: radiate 1s linear infinite;
+  animation-delay: .5s;
+}
+#party-container::before {
+  content: '';
+  min-width: 500px;
+  max-width: 1000px;
+  width: 75vw;
+  height: 500px;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  border-image-slice: 3;
+  border-image-width: 12;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border-2-gold.svg);
+  border-image-outset: 2;
+  padding: 2rem 2.5rem;
+  margin: 8px;
+  border-style: inset;
+  border-width: 2px;
+}
+
+@keyframes radiate {
+  
+  0% {background: radial-gradient(circle, rgba(255,120,0,0) 0%, rgba(255,100,0,0.1) 50%, rgba(255,120,0,.05) 90%, rgba(255,120,0, 0) 100%)}
+  25% {background: radial-gradient(circle, rgba(255,120,0,.05) 0%, rgba(255,100,0,0) 50%, rgba(255,120,0,.1) 90%, rgba(255,120,0, 0) 100%)}
+  50% {background: radial-gradient(circle, rgba(255,120,0,.1) 0%, rgba(255,100,0,0.05) 50%, rgba(255,120,0,0) 90%, rgba(255,120,0, 0) 100%)}
+  100% {background: radial-gradient(circle, rgba(255,120,0,0) 0%, rgba(255,100,0,0.1) 50%, rgba(255,120,0,.05) 90%, rgba(255,120,0, 0) 100%)}
 }
