@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import PlaceHolderCharacterCard from './PlaceholderCharacterCard'
 
 function PartyScreen({setHeader}) {
   const [isPopulated, setPopulated] = useState()
@@ -19,7 +20,9 @@ function PartyScreen({setHeader}) {
       exit={{ opacity: 0 }}
     >
       <div id='party-container'>
-        {}
+        <PlaceHolderCharacterCard />
+        <PlaceHolderCharacterCard />
+        <PlaceHolderCharacterCard />
       </div>
     </motion.div>
   )
