@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import CharacterCard from './CharacterCard'
 import CharacterCollection from './CharacterCollection'
 
-function PickCharacter({ setHeader, data, savedCharacters }) {
+function PickCharacter({ setHeader, data, savedCharacters, setSavedCharacters }) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
 
   useEffect(() => {
@@ -21,13 +21,13 @@ function PickCharacter({ setHeader, data, savedCharacters }) {
 
   return (
     <motion.div
-      id='pic-character'
+      id='pick-character'
       className={`ui-container`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <CharacterCard selectedCharacter={selectedCharacter} />
+      <CharacterCard selectedCharacter={selectedCharacter} savedCharacters={savedCharacters} setSavedCharacters={setSavedCharacters}/>
       <CharacterCollection setSelectedCharacter={setSelectedCharacter} charactersData={data}/>
     </motion.div>
   )

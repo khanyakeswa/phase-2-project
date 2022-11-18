@@ -68,9 +68,16 @@ function App() {
         <Routes>
           <Route
             path='/character/*'
-            element={<CharacterScreen setHeader={setHeader} />}
+            element={
+              <CharacterScreen
+                data={data}
+                setHeader={setHeader}
+                savedCharacters={savedCharacters}
+                setSavedCharacters={setSavedCharacters}
+              />
+            }
           />
-          <Route
+          {/* <Route
             path='/character/pick'
             element={
               <PickCharacter
@@ -79,13 +86,14 @@ function App() {
                 setSavedCharacters={setSavedCharacters}
               />
             }
-          />
+          /> */}
           <Route
             path='/party'
             element={
               <PartyScreen
                 setHeader={setHeader}
                 savedCharacters={savedCharacters}
+                setSavedCharacters={setSavedCharacters}
               />
             }
           />
