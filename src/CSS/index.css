@@ -534,13 +534,16 @@ footer {
 }
 
 #character-delete-button {
+  position: absolute;
   width: 20px;
-  right: 0px;
+  top: 0;
+  justify-self: flex-start;
   align-self: flex-end;
-  transform: translateX(15px) translateY(-5px);
+  transform: translateX(20px);
   z-index: 2;
   cursor: url(../../public/pixel_pointer.png), auto;
   padding: 15px;
+  margin: 50px 0px 50px 0px;
 }
 
 #down-arrow {

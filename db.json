@@ -161,5 +161,86 @@
       "description": "Rough and wild looking, a cyclopse stalks alone through the shadows of trees, hunting the orcs he knows are planning a raid on a nearby farm. Clutching a shortsword in each hand"
     }
   ],
-  "savedCharacters": []
+  "savedCharacters": [
+    {
+      "id": "3",
+      "name": "Aldwin",
+      "img": "/cleric.jpg",
+      "imgCropped": "/cleric-cropped.jpg",
+      "stat": {
+        "strength": "7",
+        "dex": "13",
+        "intel": "5",
+        "health": "70",
+        "endurance": "130",
+        "MANA": "50"
+      },
+      "abilities": {
+        "Guidance": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
+        "Resistance": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.",
+        "Sacred Flame": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw."
+      },
+      "description": "In your earlier days, you were a personage of some significance in a noble court or a bureaucratic organization. You might or might not come from an upper-class family; your talents, rather than the circumstances of your birth, could have secured you this position."
+    },
+    {
+      "id": "4",
+      "name": "Oberyn",
+      "img": "/druid.jpg",
+      "imgCropped": "/druid-cropped.jpg",
+      "stat": {
+        "strength": "4",
+        "dex": "9",
+        "intel": "12",
+        "health": "40",
+        "endurance": "90",
+        "MANA": "120"
+      },
+      "abilities": {
+        "Produce Flame": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.",
+        "Shillelagh": "The wood of a club or a quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon.",
+        "Animal Friendship": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spells ends."
+      },
+      "description": "You grew up in the Feywild after disappearing from your home plane as a child. Perhaps you were spirited away by kindly Fey who thought you were destined for great things. Perhaps you stumbled through a Fey crossing by chance during a twilight stroll in the woods."
+    },
+    {
+      "id": "2",
+      "name": "Finn ",
+      "img": "/bard.jpg",
+      "imgCropped": "./bard-cropped.jpg",
+      "stat": {
+        "strength": "10",
+        "dex": "10",
+        "intel": "5",
+        "health": "100",
+        "endurance": "100",
+        "MANA": "50"
+      },
+      "abilities": {
+        "Light": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.",
+        "Mage Hand": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.",
+        "Mending": "This spell repairs a single break or tear in an object you touch, such as a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no longer than 1 foot in any dimension, you mend it, leaving no trace of the former damage."
+      },
+      "description": "You have come from a humble social rank, but you could destined for so much more. Of course already the peoples those who are your home village regard you like their champion and also your destiny do call you to stand against the tyrants and also monsters those are threaten the common folk everywhere."
+    },
+    {
+      "id": "7",
+      "name": "Bode",
+      "img": "/paladin.jpg",
+      "imgCropped": "/paladin-cropped.jpg",
+      "stat": {
+        "strength": "7",
+        "dex": "9",
+        "intel": "9",
+        "health": "70",
+        "endurance": "90",
+        "MANA": "90"
+      },
+      "abilities": {
+        "Bless": "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.",
+        "Command": "You speak a one-word command to a creature you can see within range. The target must succeed on a wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it.",
+        "Cure Wounds": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs."
+      },
+      "description": "Swears to uphold justice and righteousness, to stand with the good things of the world against the encroaching darkness, and to hunt the forces of evil wherever they lurk."
+    }
+  ]
 }
