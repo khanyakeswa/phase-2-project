@@ -9,6 +9,13 @@ button {
   cursor: url(../../public/pixel_pointer.png), auto;
 }
 
+*::-webkit-scrollbar {
+  /* border: none;
+  background-color: transparent; */
+  pointer-events: fill;
+} /* webkit browsers(safari, chrome) */
+
+
 .nes-btn {
   border-image-slice: 2;
   border-image-width: 2;
@@ -106,6 +113,16 @@ button {
   font-family: 'Draconis';
 }
 
+footer {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  height: 50px;
+  font-size: 20px;
+  font-family: 'Draconis';
+  color: #fff;
+}
+
 #starter-screen > span {
   color: rgb(255, 191, 0);
   font-size: 3em;
@@ -124,6 +141,17 @@ button {
   }
   50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
   }
   100% {
     opacity: 0;
@@ -198,8 +226,16 @@ button {
   height: 60px;
   margin: 30px;
 }
+#mute-button {
+  width: 60px;
+  height: 60px;
+  margin: 30px;
+}
 
 #back-button:hover > svg {
+  fill: rgba(255, 255, 255, 1);
+}
+#mute-button:hover > svg {
   fill: rgba(255, 255, 255, 1);
 }
 #back-button:hover + span {
@@ -210,6 +246,23 @@ button {
 #back-button > svg {
   width: 25px;
   fill: rgba(255, 255, 255, 0.5);
+}
+#mute-button > svg {
+  width: 25px;
+  fill: rgba(255, 255, 255, 0.5);
+}
+#mute-button > svg > .c {
+  fill-rule: evenodd;
+}
+
+#mute-button + span {
+  font-family: 'Draconis';
+  font-size: 30px;
+  color: rgba(255, 255, 255, 1);
+  width: 25px;
+  transition: all ease 0.5s;
+  opacity: 1;
+  animation: 2s ease 0s infinite blink2;
 }
 
 #back-button + span {
@@ -225,6 +278,13 @@ button {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+#mute-button-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 
 #character-card-container {
@@ -305,7 +365,8 @@ button {
   height: 75px;
   margin-block-end: 0px;
   overflow-y: scroll;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  user-select: none;
 }
 
 #character-collection-container {
@@ -355,6 +416,7 @@ button {
 }
 
 #character-collection-container .tile-container:hover {
+  background: rgb(255, 191, 0);
   box-shadow: 8px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -381,7 +443,7 @@ button {
   text-align: center;
   font-family: 'Draconis';
   font-size: 30px;
-  color: #006bb3;
+  color: #fff;
   transition: all ease 0.25s;
   pointer-events: none;
 }
@@ -422,9 +484,16 @@ button {
   margin: 8px;
   border-style: inset;
   border-width: 2px;
-  background: radial-gradient(circle, rgba(255,120,0,0) 0%, rgba(255,100,0,0.1) 50%, rgba(255,120,0,.25) 90%, rgba(255,120,0, 0) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 120, 0, 0) 0%,
+    rgba(255, 100, 0, 0.1) 50%,
+    rgba(255, 120, 0, 0.25) 90%,
+    rgba(255, 120, 0, 0) 100%
+  );
   animation: radiate 1s linear infinite;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
+  overflow: hidden;
 }
 #party-container::before {
   content: '';
@@ -445,9 +514,176 @@ button {
   border-width: 2px;
 }
 
+#placeholder-character-card {
+  width: 30%;
+  z-index: 2;
+}
+
+#final-character-card {
+  width: 30%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+#new-character-button {
+  opacity: .5;
+}
+#new-character-hover {
+  animation: unset;
+}
+
+#character-delete-button {
+  width: 20px;
+  right: 0px;
+  align-self: flex-end;
+  transform: translateX(15px) translateY(-5px);
+  z-index: 2;
+  cursor: url(../../public/pixel_pointer.png), auto;
+  padding: 15px;
+}
+
+#down-arrow {
+  opacity: 0;
+  fill: #fff;
+  margin-top: 5px;
+  width: 15px;
+  transition: all ease .25s;
+  animation: bounce 1s ease .75s infinite;
+}
+
+#details-container:hover > #down-arrow {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(9px);}
+  100% {transform: translateY(0px);}
+}
+
+#close-svg {
+  fill: rgba(255, 255, 255, 0);
+  transition: all ease .1s;
+}
+
+#character-delete-button:hover > #close-svg {
+  fill: rgba(255, 255, 255, 1);
+}
+
+#placeholder-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: auto;
+  border-image-slice: 3;
+  border-image-width: 12;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border-2-faded.svg);
+  border-image-outset: 2;
+  padding: 1rem 1.5rem;
+  margin: 8px;
+  border-style: dashed;
+  border-width: 1px;
+}
+
+#final-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 177, 0, .1) 0%,
+    rgba(255, 177, 0, 0.25) 50%,
+    rgba(255, 177, 0, 0.5) 90%,
+    rgba(255, 177, 0, 0) 100%
+  );
+  width: auto;
+  border-image-slice: 3;
+  border-image-width: 12;
+  border-image-repeat: stretch;
+  border-image-source: url(../Assets/SVGs/border-2-gold.svg);
+  border-image-outset: 2;
+  padding: 1rem 1.5rem;
+  margin: 8px;
+  border-style: dashed;
+  border-width: 2px;
+}
+
+#final-wrapper > img {
+  width: 80%;
+  height: auto;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: repeat;
+  border-image-source: url(../Assets/SVGs/container-border-white.svg);
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 6px;
+}
+
+#finalSubmission {
+  z-index: 2;
+  position: absolute;
+  bottom: 15px;
+  width: 50px;
+  height: 25px;
+}
+
+#final-wrapper #details-container span {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+#final-wrapper #details-container p {
+  margin-block-start: 10px;
+  font-size: 20px;
+  height: 75px;
+  margin-block-end: 0px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  user-select: none;
+  color: #ffffff;
+}
+
+#party-container > canvas {
+  position: absolute;
+}
+
+#final-wrapper > #details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Draconis';
+  margin: 20px 0px;
+}
+
+#placeholder-wrapper > button {
+  max-width: 100%;
+  width: 150px;
+  height: 50px;
+  padding: 0px 30px 15px 30px;
+  margin-top: 15px;
+  font-family: 'Draconis';
+  font-size: 25px;
+}
+
+#placeholder-wrapper > span {
+  text-align: center;
+  font-family: 'Draconis';
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all ease 0.25s;
+  pointer-events: none;
+}
 
 .second-attributes {
-
   margin: 40px auto;
   border: 2px solid black;
   border-radius: 30px;
@@ -458,34 +694,57 @@ button {
   width: 50%;
   font-family: 'Draconis';
   font-size: 20px;
-  
 }
 
 .formsButton {
-
   margin: 10px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
 }
 
 #details-form {
-
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 @keyframes radiate {
-  
-  0% {background: radial-gradient(circle, rgba(255,120,0,0) 0%, rgba(255,100,0,0.1) 50%, rgba(255,120,0,.05) 90%, rgba(255,120,0, 0) 100%)}
-  25% {background: radial-gradient(circle, rgba(255,120,0,.05) 0%, rgba(255,100,0,0) 50%, rgba(255,120,0,.1) 90%, rgba(255,120,0, 0) 100%)}
-  50% {background: radial-gradient(circle, rgba(255,120,0,.1) 0%, rgba(255,100,0,0.05) 50%, rgba(255,120,0,0) 90%, rgba(255,120,0, 0) 100%)}
-  100% {background: radial-gradient(circle, rgba(255,120,0,0) 0%, rgba(255,100,0,0.1) 50%, rgba(255,120,0,.05) 90%, rgba(255,120,0, 0) 100%)}
-
+  0% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 120, 0, 0) 0%,
+      rgba(255, 100, 0, 0.1) 50%,
+      rgba(255, 120, 0, 0.05) 90%,
+      rgba(255, 120, 0, 0) 100%
+    );
+  }
+  25% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 120, 0, 0.05) 0%,
+      rgba(255, 100, 0, 0) 50%,
+      rgba(255, 120, 0, 0.1) 90%,
+      rgba(255, 120, 0, 0) 100%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 120, 0, 0.1) 0%,
+      rgba(255, 100, 0, 0.05) 50%,
+      rgba(255, 120, 0, 0) 90%,
+      rgba(255, 120, 0, 0) 100%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 120, 0, 0) 0%,
+      rgba(255, 100, 0, 0.1) 50%,
+      rgba(255, 120, 0, 0.05) 90%,
+      rgba(255, 120, 0, 0) 100%
+    );
+  }
 }

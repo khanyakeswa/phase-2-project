@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import CharacterCard from './CharacterCard'
 import CharacterCollection from './CharacterCollection'
 
-function PickCharacter({ setHeader, data }) {
+function PickCharacter({ setHeader, data, savedCharacters }) {
   const [selectedCharacter, setSelectedCharacter] = useState({})
 
   useEffect(() => {

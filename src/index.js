@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './CSS/index.css'
 import './CSS/fonts.css'
 import App from './Components/App'
+import Music from './Components/Music'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 

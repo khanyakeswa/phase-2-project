@@ -14,7 +14,9 @@ function MemberSelection({ setHeader }) {
   }, [])
 
   function newCharacterClickHandler() {
-    navigate('/character/create/details')
+    // navigate('/character/create/details')
+
+    alert('This Version is still in progress, please wait until it is stable')
   }
 
   function pickCharacterClickHandler() {
@@ -29,7 +31,7 @@ function MemberSelection({ setHeader }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <button className='nes-btn is-primary' onClick={newCharacterClickHandler}>
+      <button id="new-character-button" className='nes-btn is-primary' onClick={newCharacterClickHandler}>
         create new adventurer
       </button>
       <button

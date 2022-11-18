@@ -2,13 +2,22 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TextTransition, { presets } from 'react-text-transition'
 
-
-function CharacterCard({ selectedCharacter }) {
+function CharacterCard({
+  selectedCharacter,
+  savedCharacters,
+  setSavedCharacters,
+}) {
   const navigate = useNavigate()
   console.log(selectedCharacter.description)
 
   function recruitButtonClickHandler() {
     navigate('/party')
+    // setSavedCharacters([...savedCharacters, selectedCharacter])
+    fetch('http://localhost:6001/savedCharacters', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/JSON' },
+      body: JSON.stringify(selectedCharacter),
+    })
   }
 
   return (
@@ -18,7 +27,7 @@ function CharacterCard({ selectedCharacter }) {
         <div id='details-container'>
           <div id='card-name-container'>
             <TextTransition
-              direction='down'
+              direction='up'
               springConfig={presets.gentle}
               style={{ justifyContent: 'center', height: 36.5 }}
             >
@@ -27,6 +36,7 @@ function CharacterCard({ selectedCharacter }) {
           </div>
           <span></span>
           <p>{selectedCharacter.description}</p>
+          <svg id="down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 8.57"><path className="b" d="M8.57,8.57h-2.14v-2.14h2.14v2.14Z"/><path className="b" d="M15,2.14h-2.14V0h2.14V2.14Z"/><path className="b" d="M12.86,4.29h-2.14V2.14h2.14v2.14Z"/><path className="b" d="M10.71,6.43h-2.14v-2.14h2.14v2.14Z"/><path className="b" d="M6.43,6.43h-2.14v-2.14h2.14v2.14Z"/><path className="b" d="M4.29,4.29H2.14V2.14h2.14v2.14Z"/><path className="b" d="M2.14,2.14H0V0H2.14V2.14Z"/></svg>
         </div>
       </div>
       <button
