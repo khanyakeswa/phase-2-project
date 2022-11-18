@@ -290,6 +290,10 @@ button {
   margin: 20px;
 }
 
+#character-card #card-name-container {
+  height: 25px;
+}
+
 #character-card #details-container span {
   font-size: 30px;
   color: #006bb3;
