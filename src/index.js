@@ -12,7 +12,6 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
-      <Music />
     </BrowserRouter>
   </React.StrictMode>
 )

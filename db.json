@@ -181,6 +181,26 @@
         "Mending": "This spell repairs a single break or tear in an object you touch, such as a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no longer than 1 foot in any dimension, you mend it, leaving no trace of the former damage."
       },
       "description": "You have come from a humble social rank, but you could destined for so much more. Of course already the peoples those who are your home village regard you like their champion and also your destiny do call you to stand against the tyrants and also monsters those are threaten the common folk everywhere."
+    },
+    {
+      "id": "4",
+      "name": "Oberyn",
+      "img": "/druid.jpg",
+      "imgCropped": "/druid-cropped.jpg",
+      "stat": {
+        "strength": "4",
+        "dex": "9",
+        "intel": "12",
+        "health": "40",
+        "endurance": "90",
+        "MANA": "120"
+      },
+      "abilities": {
+        "Produce Flame": "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.",
+        "Shillelagh": "The wood of a club or a quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon.",
+        "Animal Friendship": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spells ends."
+      },
+      "description": "You grew up in the Feywild after disappearing from your home plane as a child. Perhaps you were spirited away by kindly Fey who thought you were destined for great things. Perhaps you stumbled through a Fey crossing by chance during a twilight stroll in the woods."
     }
   ]
 }

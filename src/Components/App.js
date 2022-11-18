@@ -6,7 +6,7 @@ import StarterScreen from './StarterScreen'
 import PickCharacter from './PickCharacter'
 import { AnimatePresence } from 'framer-motion'
 import TextTransition, { presets } from 'react-text-transition'
-
+import MuteButton from './MuteButton'
 
 function App() {
   const location = useLocation()
@@ -40,6 +40,7 @@ function App() {
 
   return (
     <div id='window' className={currentHeader} key={location.pathname}>
+      <MuteButton />
       <header
         id='current-screen-header'
         className={currentHeader === '' ? 'hidden' : 'visible'}
@@ -104,8 +105,7 @@ function App() {
           <Route path='*' element={<div>OOPS</div>} />
         </Routes>
       </AnimatePresence>
-      {location.pathname === '/party' ? null :
-      location.pathname !== '/' ? (
+      {location.pathname === '/party' ? null : location.pathname !== '/' ? (
         <div id='back-button-container'>
           <button
             onClick={backButtonHandler}

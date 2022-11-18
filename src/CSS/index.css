@@ -146,6 +146,17 @@ footer {
     opacity: 0;
   }
 }
+@keyframes blink2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 #starter-screen > img {
   width: 50em;
@@ -215,8 +226,16 @@ footer {
   height: 60px;
   margin: 30px;
 }
+#mute-button {
+  width: 60px;
+  height: 60px;
+  margin: 30px;
+}
 
 #back-button:hover > svg {
+  fill: rgba(255, 255, 255, 1);
+}
+#mute-button:hover > svg {
   fill: rgba(255, 255, 255, 1);
 }
 #back-button:hover + span {
@@ -227,6 +246,23 @@ footer {
 #back-button > svg {
   width: 25px;
   fill: rgba(255, 255, 255, 0.5);
+}
+#mute-button > svg {
+  width: 25px;
+  fill: rgba(255, 255, 255, 0.5);
+}
+#mute-button > svg > .c {
+  fill-rule: evenodd;
+}
+
+#mute-button + span {
+  font-family: 'Draconis';
+  font-size: 30px;
+  color: rgba(255, 255, 255, 1);
+  width: 25px;
+  transition: all ease 0.5s;
+  opacity: 1;
+  animation: 2s ease 0s infinite blink2;
 }
 
 #back-button + span {
@@ -242,6 +278,13 @@ footer {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+#mute-button-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 
 #character-card-container {
