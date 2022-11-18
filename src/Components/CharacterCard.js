@@ -2,8 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TextTransition, { presets } from 'react-text-transition'
 
+
 function CharacterCard({ selectedCharacter }) {
   const navigate = useNavigate()
+  const characterImg = selectedCharacter.img
 
   function recruitButtonClickHandler() {
     navigate('/party')
@@ -12,7 +14,7 @@ function CharacterCard({ selectedCharacter }) {
   return (
     <div id='character-card-container'>
       <div id='character-card'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'></img>
+        <img src={require( characterImg)}></img>
         <div id='details-container'>
           <div id='card-name-container'>
             <TextTransition
