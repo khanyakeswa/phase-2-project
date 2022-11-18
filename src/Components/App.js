@@ -6,7 +6,7 @@ import StarterScreen from './StarterScreen'
 import PickCharacter from './PickCharacter'
 import { AnimatePresence } from 'framer-motion'
 import TextTransition, { presets } from 'react-text-transition'
-// import 
+
 
 function App() {
   const location = useLocation()
@@ -122,6 +122,7 @@ function App() {
           <span>go back</span>
         </div>
       ) : null}
+      <footer>Copyright © Jonny Tilahun, Khanya Keswa</footer>
     </div>
   )
 }
