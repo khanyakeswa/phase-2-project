@@ -16,7 +16,7 @@ function CharacterCard({ selectedCharacter }) {
         <div id='details-container'>
           <div id='card-name-container'>
             <TextTransition
-              direction='down'
+              direction='up'
               springConfig={presets.gentle}
               style={{ justifyContent: 'center', height: 36.5 }}
             >

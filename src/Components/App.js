@@ -13,6 +13,7 @@ function App() {
 
   const [currentHeader, setHeader] = useState('')
   const [data, setData] = useState([])
+  const [savedCharacters, setSavedCharacters] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:6001/characters')
@@ -73,12 +74,13 @@ function App() {
               <PickCharacter
                 setHeader={setHeader}
                 data={data}
+                setSavedCharacters={setSavedCharacters}
               />
             }
           />
           <Route
             path='/party'
-            element={<PartyScreen setHeader={setHeader} />}
+            element={<PartyScreen setHeader={setHeader} savedCharacters={savedCharacters}/>}
           />
           <Route
             path='/endscreen'
