@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 function AttributesForm() {
   const navigate = useNavigate();
 
-
   let max = 25;
 
   const [strength, setStrength] = useState(0);
@@ -29,7 +28,7 @@ function AttributesForm() {
   return (
     <div>
       <form>
-        <label style={{ color: "white" }} htmlFor="strength">
+        <label htmlFor="strength">
           STRENGTH
           <input
             type="number"
@@ -40,7 +39,7 @@ function AttributesForm() {
           />
         </label>
 
-        <label style={{ color: "white" }} htmlFor="dex">
+        <label htmlFor="dex">
           DEX
           <input
             type="number"
@@ -51,7 +50,7 @@ function AttributesForm() {
           />
         </label>
 
-        <label style={{ color: "white" }} htmlFor="intel">
+        <label htmlFor="intel">
           INTEL
           <input
             type="number"
@@ -63,9 +62,12 @@ function AttributesForm() {
         </label>
       </form>
 
-      <h2 style={{ color: "white" }}>Health: {strength * 10}</h2>
-      <h2 style={{ color: "white" }}>DEX: {dex * 10} </h2>
-      <h2 style={{ color: "white" }}>MANA:{intel * 10} </h2>
+      <div className='second-attributes'>
+        <h2>Health: {strength * 10}</h2>
+        <h2>DEX: {dex * 10} </h2>
+        <h2>MANA:{intel * 10} </h2>
+      </div>
+
       <button
         className="formsButton"
         onClick={() => navigate("/character/create/abilities")}
