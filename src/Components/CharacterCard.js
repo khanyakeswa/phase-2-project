@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import TextTransition, { presets } from 'react-text-transition'
+import useSound from 'use-sound'
+import success from '../Assets/Sounds/success.mp3'
 
 function CharacterCard({
   selectedCharacter,
@@ -8,11 +10,17 @@ function CharacterCard({
   setSavedCharacters,
 }) {
   const navigate = useNavigate()
+  const [play, { stop }] = useSound(success, {
+    soundEnabled: true,
+    interrupt: false,
+    volume: 0.1,
+  })
 
   function recruitButtonClickHandler() {
     navigate('/party')
+    play()
 
-    if (savedCharacters.length < 4) {
+    if (savedCharacters.length <= 3) {
       fetch('http://localhost:6001/savedCharacters', {
         method: 'POST',
         headers: { 'Content-Type': 'application/JSON' },

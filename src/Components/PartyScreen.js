@@ -5,6 +5,7 @@ import FinalCharacterCard from './FinalCharacterCard'
 import Confetti from './Confetti'
 
 function PartyScreen({ setHeader, savedCharacters, setSavedCharacters }) {
+
   useEffect(() => {
     fetch('http://localhost:6001/savedCharacters')
     .then((response) => response.json())

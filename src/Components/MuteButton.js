@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import Music from './Music'
+import { useLocation } from 'react-router-dom'
 import useSound from 'use-sound'
 import song from '../Assets/Sounds/legend.mp3'
 
 const MuteButton = () => {
   const [muted, setMuted] = useState(true)
+
   function playButtonHandler() {
     console.log('playing')
     setMuted(!muted)
